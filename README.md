@@ -24,7 +24,8 @@
 
 ![cf](https://user-images.githubusercontent.com/83809636/135038509-3f3b4b56-c095-451e-ba40-2672b3476e13.png)
 
-
+협업 필터링(collaborative filtering)에는 최근접 이웃 기반(nearest neighbor based collaborative filtering)과 잠재 요인(latent factor based collaborative filtering)이 있습니다.
+저는 최근접 이웃 기반 알고리즘을
 
 ### Step 1
 
