@@ -6,7 +6,7 @@
 ### Step 1
 
 각 사용자에 대한 성별,나이,직업,가구원 수와 거기에 mbti를 사용자 속성으로 추가해 이를 기반으로 CF(Collaborative-filtering) 중 user-based 
-'''
+''' Python
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
