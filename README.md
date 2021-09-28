@@ -24,8 +24,10 @@
 
 ![cf](https://user-images.githubusercontent.com/83809636/135038509-3f3b4b56-c095-451e-ba40-2672b3476e13.png)
 
+CF는 협업 필터링이라고 말하며 사용자(user)가 아이템에 매긴 평점,상품 구매 이력 등의 사용자 행동 양식(user behavior)를 기반으로 추천해주는 알고리즘을 말합니다.
+
 협업 필터링(collaborative filtering)에는 최근접 이웃 기반(nearest neighbor based collaborative filtering)과 잠재 요인(latent factor based collaborative filtering)이 있습니다.
-저는 최근접 이웃 기반 알고리즘을
+저는 그중 최근접 이웃 기반 알고리즘을 사용하였으며 이는 가장 근접한 사용자를 기반으로 사용자가 아직 평가하지 않은 아이템을 예측하는 것을 목표로 하는 알고리즘입니다.
 
 ### Step 1
 
