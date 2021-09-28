@@ -1,0 +1,98 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <title>맘모스</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    {% load static %}
+    <style>
+        body,
+        html {
+            height: 100%;
+            font-family: 'IBM Plex Sans KR', sans-serif;
+        }
+
+            {
+            % comment %
+        }
+
+        #main {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+            {
+            % endcomment %
+        }
+
+        .bgimg {
+            background-position: center;
+            background-size: cover;
+            background-image: url({% static "./market8.jpg" %});
+            min-height: 70%;
+        }
+
+            {
+            % comment %
+        }
+
+        <img src="{% static "./domabigmarket.png" %}">;
+
+            {
+            % endcomment %
+        }
+
+        .menu {
+            display: none;
+        }
+    </style>
+</head>
+{% comment %}
+
+<body bgcolor="#fff1c6"> {% endcomment %}
+
+    <body>
+        <style type="text/css">
+            * {
+                font-family: 'IBM Plex Sans KR', sans-serif;
+            }
+        </style>
+        <!-- Links (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-row w3-padding w3-black">
+                <div class="w3-col s3">
+                    <a href="#" class="w3-button w3-block w3-black">전체카테고리</a>
+                </div>
+                <div class="w3-col s3">
+                    <a href="#about" class="w3-button w3-block w3-black">오늘의 특가</a>
+                </div>
+                <div class="w3-col s3">
+                    <a href="/market/recom_user" class="w3-button w3-block w3-black">AI 추천상품</a>
+                </div>
+                <div class="w3-col s3">
+                    <a href="#where" class="w3-button w3-block w3-black">마이페이지</a>
+                </div>
+            </div>
+        </div>
+        </br></br></br>
+        <h2>{{ user }}님 반갑습니다!</h2>
+        <div align="right"><a href="{% url 'logout' %}">로그아웃</a>&nbsp&nbsp&nbsp<a
+                href="{% url 'profile_edit' %}">회원정보수정</a></div>
+        <hr />
+        <h3>
+            <<< 회원님의 프로필>>>
+        </h3>
+        ▶회원아이디 : {{ user }}</br>
+        ▶성별 : {{ recom.sex }}</br>
+        ▶나이 : {{ recom.age }}</br>
+        ▶직업 : {{ recom.job }}</br>
+        ▶가구원수 : {{ recom.family_amount }}명</br>
+        ▶선호음식 : {{ recom.food1 }}, {{ recom.food2 }}, {{ recom.food3 }}</br>
+        ▶선호물건 : {{ recom.item1 }}, {{ recom.item2 }}, {{ recom.item3 }}</br>
+        <hr />

@@ -1,0 +1,259 @@
+{% load static %}
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>맘모스</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+  <!-- CSS를 JS보다 먼저 배치 -->
+  <link rel="stylesheet" href="{% static " bootstrap-5.1.0-dist/css/bootstrap.min.css" %}" />
+  <script src="{% static " bootstrap-5.1.0-dist/js/bootstrap.min.js" %}"></script>
+  <style>
+    body,
+    html {
+      height: 100%;
+      font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url({% static "./recom_user6.png" %});
+      min-height: 50%;
+    }
+
+      {
+      % comment %
+    }
+
+    <img src="{% static "./domabigmarket.png" %}">;
+
+      {
+      % endcomment %
+    }
+
+    .menu {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-title a {
+        color: blue;
+      }
+    }
+
+    #main {
+      width: 700px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <style type="text/css">
+    * {
+      font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+  </style>
+  <!-- Links (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3">
+        <a href="#" class="w3-button w3-block w3-black">전체카테고리</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#about" class="w3-button w3-block w3-black">오늘의 특가</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#menu" class="w3-button w3-block w3-black">AI 추천상품</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="#where" class="w3-button w3-block w3-black">마이페이지</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header with image -->
+  <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-middle w3-center">
+      <span style="backgroundColor: #03F3B3; color:black; font-size:55px">{{ user }}님을 위한 AI추천상품!</span>
+    </div>
+  </header>
+
+
+  </br>
+  <div align="right"><span style="font-size:20px"><a href="{% url 'logout' %}">로그아웃</a>&nbsp&nbsp&nbsp<a
+        href="{% url 'profile_edit' %}">회원정보수정</a></div>
+  <hr />
+  <div align="center"><span style="font-size:30px">＃나와 비슷한 취향을 가진 사람들은 어떤 상품을 찾을까?</br></br></div>
+
+  <div class="row">
+    {% for p in product %}
+    {% for i in food_list %}
+    {% if i == p.name %}
+    <div align="center" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <img src="{{ p.photo.url }}" style="width:300px; height:500px;" class="card-img-top" alt="{{ p.name }}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ p.name }}</h5>
+        <p class="card-text">{{ p.intro|truncatechars:30 }}</p>
+        <a href="" class="btn btn-secondary">Details</a>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </div>
+  <div class="row">
+    {% for p in product %}
+    {% for i in item_list %}
+    {% if i == p.name %}
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <img src="{{ p.photo.url }}" style="width:200px; height:300px;" class="card-img-top" alt="{{ p.name }}" />
+      <div class="card-body">
+        <h5 class="card-title">{{ p.name }}</h5>
+        <p class="card-text">{{ p.intro|truncatechars:100 }}</p>
+        <a href="" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+  </div>
+  </br>
+  <hr />
+  <div align="center"><span style="font-size:30px">＃나와 비슷한 성향을 가진 사람들은 어떤 상품을 선호할까?</br></br></div>
+
+  <div style="width: 900px; height: 500px;">
+    <!--차트가 그려질 부분-->
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script type="text/javascript">
+    var context = document
+      .getElementById('myChart')
+      .getContext('2d');
+    var myChart = new Chart(context, {
+      type: 'bar', // 차트의 형태
+      data: { // 차트에 들어갈 데이터
+        labels: [
+          //x 축
+          '{{ food_name.1 }}', '{{ food_name.2 }}', '{{ food_name.3 }}'
+        ],
+        datasets: [
+          { //데이터
+            label: '{{ recom.mbti }}들의 Top3 음식선호', //차트 제목
+            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+            data: [
+              '{{ food_num.1 }}', '{{ food_num.2 }}', '{{ food_num.3 }}' //x축 label에 대응되는 데이터 값
+            ],
+            backgroundColor: [
+              //색상
+              'rgba(54, 162, 235, 0.2)',
+            ],
+            borderColor: [
+              //경계선 색상
+              //'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              //'rgba(255, 206, 86, 1)',
+            ],
+            borderWidth: 1 //경계선 굵기
+          }/* ,
+              {
+                  label: 'test2',
+                  fill: false,
+                  data: [
+                      8, 34, 12, 24
+                  ],
+                  backgroundColor: 'rgb(157, 109, 12)',
+                  borderColor: 'rgb(157, 109, 12)'
+              } */
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        }
+      }
+    });
+  </script>
+
+
+  <div style="width: 900px; height: 500px;">
+    <!--차트가 그려질 부분-->
+    <canvas id="itemChart" margin: 0 auto;></canvas>
+  </div>
+
+  <script type="text/javascript">
+    var context = document
+      .getElementById('itemChart')
+      .getContext('2d');
+    var itemChart = new Chart(context, {
+      type: 'bar', // 차트의 형태
+      data: { // 차트에 들어갈 데이터
+        labels: [
+          //x 축
+          '{{ item_name.1 }}', '{{ item_name.2 }}', '{{ item_name.3 }}'
+        ],
+        datasets: [
+          { //데이터
+            label: '{{ recom.mbti }}들의 Top3 물건선호', //차트 제목
+            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+            data: [
+              '{{ item_num.1 }}', '{{ item_num.2 }}', '{{ item_num.3 }}' //x축 label에 대응되는 데이터 값
+            ],
+            backgroundColor: [
+              //색상
+              'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+              //경계선 색상
+              'rgba(255, 99, 132, 1)',
+              //'rgba(54, 162, 235, 1)',
+              //'rgba(255, 206, 86, 1)',
+            ],
+            borderWidth: 1 //경계선 굵기
+          }/* ,
+              {
+                  label: 'test2',
+                  fill: false,
+                  data: [
+                      8, 34, 12, 24
+                  ],
+                  backgroundColor: 'rgb(157, 109, 12)',
+                  borderColor: 'rgb(157, 109, 12)'
+              } */
+        ]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        }
+      }
+    });
+  </script>
+
+</body>

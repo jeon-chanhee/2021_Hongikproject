@@ -1,0 +1,12 @@
+{% for message in messages %}
+<div>
+  <strong>{{message|safe}}</strong>
+</div>
+{% endfor %} {{order}}
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label>파일을 업로드하세요.</label>
+  <input type="file" name="file" />
+  <p>csv 파일을 업로드하세요</p>
+  <button type="submit">Upload</button>
+</form>

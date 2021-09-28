@@ -1,0 +1,115 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <title>맘모스</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  {% load static %}
+  <style>
+    body,
+    html {
+      height: 100%;
+      font-family: 'IBM Plex Sans KR', sans-serif;
+    }
+
+      {
+      % comment %
+    }
+
+    #main {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+      {
+      % endcomment %
+    }
+
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url({% static "./market8.jpg" %});
+      min-height: 70%;
+    }
+
+      {
+      % comment %
+    }
+
+    <img src="{% static "./domabigmarket.png" %}">;
+
+      {
+      % endcomment %
+    }
+
+    .menu {
+      display: none;
+    }
+  </style>
+</head>
+{% comment %}
+
+<body bgcolor="#fff1c6"> {% endcomment %}
+
+  <body>
+    <style type="text/css">
+      * {
+        font-family: 'IBM Plex Sans KR', sans-serif;
+      }
+    </style>
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-row w3-padding w3-black">
+        <div class="w3-col s3">
+          <a href="#" class="w3-button w3-block w3-black">전체카테고리</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="#about" class="w3-button w3-block w3-black">오늘의 특가</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="#menu" class="w3-button w3-block w3-black">AI 추천상품</a>
+        </div>
+        <div class="w3-col s3">
+          <a href="#where" class="w3-button w3-block w3-black">마이페이지</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header with image -->
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+      <div class="w3-display-middle w3-center">
+        <span class="w3-text-white" style="font-size:55px">Welcome to the local market</span>
+      </div>
+    </header>
+    <!-- Add a background color and large text to the whole page -->
+    {% comment %} <div class="w3-sand w3-grayscale w3-large"> {% endcomment %}
+
+      </br>
+
+      <div id="main">
+        {% load static %}
+        <div align="center">
+          <p><span style="font-size:20px">안녕하세요 맘모스입니다.</span></p>
+          <a id="logo" href="">
+            <img src="{% static " ./mms.png" %}" width=250px; height=150px;></a><br />
+
+          <span style="font-size:20px">전통시장 품목추천서비스에 오신 것을 환영합니다!</span><br />
+          <span style="font-size:20px">회원가입 후 간단한 조사에 참여하시면 고객님께 개인맞춤형 전통시장품목
+            추천이 이루어집니다.</span><br /><br />
+
+          <a id="login" href="login/"><img src="{% static " ./login.png" %}" width=70px;
+              height=30px;></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <a id="signup" href="signup/"><img src="{% static " ./signup.png" %}" width=95px; height=30px;></a>
+        </div>
+        <br /><br />
+      </div>
+
+  </body>
+
+</html>
