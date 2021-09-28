@@ -37,9 +37,10 @@ CF는 협업 필터링이라고 말하며 사용자(user)가 아이템에 매긴
 ### Step 1 데이터 전처리
 
 ```python
+# 필요 라이브러리
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
-    for i in range(5):
-        print(i)
+```
+    
        
