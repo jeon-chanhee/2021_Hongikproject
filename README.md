@@ -1,1 +1,5 @@
-# 2021_Hongikproject
+2021년 홍익대학교 빅데이터 양성과정 프로젝트 1을 수행한 결과물입니다.
+
+저희는 '추천시스템을 도입한 전통시장 플랫폼'을 구현했으며 
+
+![cb](https://user-images.githubusercontent.com/83809636/135031820-5b6e099a-4f8f-4334-933a-2146f2bc3f66.png)
