@@ -4,7 +4,10 @@
 프로젝트를 진행하면서 참고한 자료입니다.
 #### 참고자료 및 데이터
 * https://www.kaggle.com/laowingkin/fifa-18-predict-player-s-positions 
+
 데이터는 Google Form을 통해 500명의 설문을 직접 받았습니다. 개인정보가 포함되어있기 때문에 업로드는 못했습니다.
+
+#### 추천시스템
 
 먼저 추천시스템에 대해 간략히 설명하겠습니다. 
 
