@@ -10,11 +10,20 @@
 ### 추천시스템
 
 먼저 추천시스템에 대해 간략히 설명하겠습니다. 
+추천 시스템은 사용자(user)가 선호하는 상품(item)으 예측하는 시스템이라고 할 수 있는데 크게 2가지로 분류합니다.
+#### CB(Content-based)
 
-추천 시스템을 크게 2가지로 분류합니다.
-#### CB(content-based)
+* 출처 : https://towardsdatascience.com/essentials-of-recommendation-engines-content-based-and-collaborative-filtering-31521c964922
 
 ![cb](https://user-images.githubusercontent.com/83809636/135036337-facd1224-eb22-42a8-a011-24eced1dbee9.png)
+
+아이템을 기반으로 추천해주는 시스템이며 사용자가 특정 아이템을 선호하는 경우 그 아이템과 비슷한 콘텐츠를
+가진 다른 아이템을 추천합니다.
+
+#### CF(Collaborative-filtering)
+
+![cf](https://user-images.githubusercontent.com/83809636/135038509-3f3b4b56-c095-451e-ba40-2672b3476e13.png)
+
 
 
 ### Step 1
