@@ -1,9 +1,13 @@
 ## 2021년 홍익대학교 빅데이터 양성과정 프로젝트 1 수행결과물
 
-프로젝트 주제는 '추천시스템을 도입한 전통시장 플랫폼'입니다. 프로젝트 선정의 목적부터 결과까지 pdf 파일로 정리하였으니 관심있으신 분은 읽어보시면 좋을 것 같습니다.
+총 4명이 한 달간 프로젝트를 진행했습니다. 저는 거기서 PM을 담당했습니다.
+저희 프로젝트는 django를 활용하여 '추천시스템을 도입한 전통시장 웹어플리케이션'을 구현했습니다. 프로젝트 선정의 목적부터 결과까지 pdf 파일로 정리하였으니 관심있으신 분은 읽어보시면 좋을 것 같습니다.
+
 프로젝트를 진행하면서 참고한 자료입니다.
+
 #### 참고자료 및 데이터
-* https://www.kaggle.com/laowingkin/fifa-18-predict-player-s-positions 
+* https://www.kaggle.com/laowingkin/fifa-18-predict-player-s-positions
+* https://lsjsj92.tistory.com/563 
 
 데이터는 Google Form을 통해 500명의 설문을 직접 받았습니다. 개인정보가 포함되어있기 때문에 업로드는 못했습니다.
 
@@ -28,6 +32,8 @@ CF는 협업 필터링이라고 말하며 사용자(user)가 아이템에 매긴
 
 협업 필터링(collaborative filtering)에는 최근접 이웃 기반(nearest neighbor based collaborative filtering)과 잠재 요인(latent factor based collaborative filtering)이 있습니다.
 저는 그중 최근접 이웃 기반 알고리즘을 사용하였으며 이는 가장 근접한 사용자를 기반으로 사용자가 아직 평가하지 않은 아이템을 예측하는 것을 목표로 하는 알고리즘입니다.
+
+제 프로젝트는 각 사용자에 대한 음식 선호도를 바탕으로  
 
 ### Step 1
 
