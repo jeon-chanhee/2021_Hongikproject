@@ -14,7 +14,7 @@
 ### 추천시스템
 
 먼저 추천시스템에 대해 간략히 설명하겠습니다. 
-추천 시스템은 사용자(user)가 선호하는 상품(item)으 예측하는 시스템이라고 할 수 있는데 크게 2가지로 분류합니다.
+추천 시스템은 사용자(user)가 선호하는 상품(item)을 예측하는 시스템이라고 할 수 있는데 크게 2가지로 분류합니다.
 #### CB(Content-based)
 
 * 출처 : https://towardsdatascience.com/essentials-of-recommendation-engines-content-based-and-collaborative-filtering-31521c964922
@@ -33,7 +33,7 @@ CF는 협업 필터링이라고 말하며 사용자(user)가 아이템에 매긴
 협업 필터링(collaborative filtering)에는 최근접 이웃 기반(nearest neighbor based collaborative filtering)과 잠재 요인(latent factor based collaborative filtering)이 있습니다.
 저는 그중 최근접 이웃 기반 알고리즘을 사용하였으며 이는 가장 근접한 사용자를 기반으로 사용자가 아직 평가하지 않은 아이템을 예측하는 것을 목표로 하는 알고리즘입니다.
 
-프로젝트는 각 사용자에 대한 음식 맟 물품 선호도를 바탕으로 성별,연령,가구원수라는 각 사용자별 특성에 mbti라는 특성을 추가해 가장 비슷한 사용자가 선호하는 음식을 추천하는 시스템을 구현했습니다.
+프로젝트는 각 사용자에 대한 음식 및 물품 선호도를 바탕으로 성별,연령,가구원수라는 각 사용자별 특성에 mbti라는 특성을 추가해 가장 비슷한 사용자가 선호하는 음식을 추천하는 시스템을 구현했습니다.
 
 ### Step 1 데이터 전처리
 
